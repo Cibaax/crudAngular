@@ -1,0 +1,50 @@
+
+
+<div mat-dialog-content>
+   
+    <div style="display: flex; justify-content: center;">
+        <h1 mat-dialog-title>{{tittleAction}}</h1>
+    </div>
+    <form [formGroup]="formProduct" >
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile> 
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre del producto</mat-label>
+                    <input matInput formControlName="name" autocomplete="off">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Descripción</mat-label>
+                    <input matInput formControlName="description" autocomplete="off">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Precio</mat-label>
+                    <input matInput formControlName="precio" autocomplete="off" (keypress)="soloNumeros($event)">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Producto Activo</mat-label>
+                    <mat-select formControlName="active" autocomplete="off">
+                        <mat-option [value]="true">Sí</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile> 
+            
+        </mat-grid-list>
+    </form>
+    <div style="display: flex; justify-content: center;" *ngIf="mensajeError" class="error-message">{{ mensajeError }}</div>
+    <div mat-dialog-actions style="display: flex; justify-content: space-evenly;">
+        <button mat-raised-button color="primary" (click)="addEditProduct()" [disabled]="formProduct.invalid">
+            {{buttonAction}}
+        </button>
+        <button mat-flat-button color="warn" mat-dialog-close>
+            Cerrar
+        </button>  
+
+    </div>
+</div>

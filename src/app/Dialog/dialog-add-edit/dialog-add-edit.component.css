@@ -1,0 +1,14 @@
+.mat-grid-tile{
+    padding-top: 10px;
+}
+
+mat-form-field{
+    font-size: 14px;
+    width: 80%;
+}
+
+.error-message {
+    color: red;
+    margin: 10px;
+  }
+  
