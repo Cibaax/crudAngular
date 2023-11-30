@@ -43,7 +43,7 @@ export class DialogAddEditComponent implements OnInit{
     @Inject (MAT_DIALOG_DATA) public dataProduct: Product
   ){
     this.formProduct = this.fb.group({
-      id: [null as unknown as number],
+      id: 0,
       name:['',Validators.required],
       description:['',Validators.required],
       precio:['',Validators.required],
