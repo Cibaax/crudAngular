@@ -1,3 +1,3 @@
 export const environment = {
-    endPoint:'http://localhost:5097/'
+    endPoint:'https://cwhl69f9-5097.use2.devtunnels.ms/'
 };
